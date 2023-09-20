@@ -1,11 +1,11 @@
 package model.boards;
 
-import model.interfaces.IBoard;
+import model.BivariateHashMap;
+import model.Position;
+import model.games.TicTacToeGame;
 
-import java.util.HashMap;
-
-public abstract class Board implements IBoard {
-    protected BivariateHashMap<Integer, Integer, Character> board;
+abstract class Board implements IBoard {
+    protected BivariateHashMap<Integer, Integer, IShapes> board;
     protected final int width;
     protected final int length;
 
@@ -17,7 +17,7 @@ public abstract class Board implements IBoard {
     }
 
     @Override
-    public abstract BivariateHashMap<Integer, Integer, Character> getBoard();
+    public abstract BivariateHashMap<Integer, Integer, IShapes> getBoard();
     protected abstract void setEmptyBoard(int width, int length);
 
     @Override
@@ -30,11 +30,12 @@ public abstract class Board implements IBoard {
         return length;
     }
     @Override
-    public char getValue(int x, int y) {
-        return board.get(x, y);
+    public IShapes getValue(Position<Integer, Integer>k) {
+        return board.get(k);
     }
+
     @Override
-    public void setValue(int x, int y, char value) {
-        board.put(x, y, value);
+    public void setValue(Position<Integer, Integer> position, IShapes shapes) {
+        board.put(position,shapes);
     }
 }

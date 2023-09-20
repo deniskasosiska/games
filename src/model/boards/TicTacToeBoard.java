@@ -1,5 +1,8 @@
 package model.boards;
 
+import model.BivariateHashMap;
+import model.Position;
+
 public class TicTacToeBoard extends Board{
 
     public TicTacToeBoard() {
@@ -8,7 +11,7 @@ public class TicTacToeBoard extends Board{
 
 
     @Override
-    public BivariateHashMap<Integer, Integer, Character> getBoard() {
+    public BivariateHashMap<Integer, Integer, IShapes> getBoard() {
         return board;
     }
 
@@ -16,7 +19,7 @@ public class TicTacToeBoard extends Board{
     protected void setEmptyBoard(int width, int length) {
         for(int i=0;i<width;i++){
             for(int f=0;f<length;f++){
-                board.put(i, f, ' ');
+                board.put(new Position<>(i, f), TicTacToeShapes.empty);
             }
         }
     }

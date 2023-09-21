@@ -3,7 +3,6 @@ package view;
 import model.Position;
 import model.boards.IBoard;
 import model.players.IPlayer;
-import view.IView;
 
 import java.util.Scanner;
 
@@ -72,12 +71,12 @@ public class View implements IView {
     }
 
     private String frame(int cell){
-        String out = "\t|";
+        StringBuilder out = new StringBuilder("\t|");
         for (int i=0;i<cell;i++){
-            out+= i<cell-1
-                ?"-+"
-                :"-|";
+            out.append(i < cell - 1
+                    ? "-+"
+                    : "-|");
         }
-        return out;
+        return out.toString();
     }
 }

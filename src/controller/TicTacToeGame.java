@@ -27,7 +27,6 @@ public class TicTacToeGame extends Game
         for(int i=0; i<Math.pow(board.getWidth(),2);)
         {
             Position<Integer, Integer> position = view.getNextStep(players.get(i%2), board);
-            BivariateHashMap<Integer, Integer, IShapes> m = board.getBoard();
 
             IShapes value = board.getValue(position);
             if (value == TicTacToeShapes.empty)

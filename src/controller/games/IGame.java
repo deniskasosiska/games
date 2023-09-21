@@ -1,4 +1,4 @@
-package model.games;
+package controller.games;
 
 public interface IGame {
     void start();

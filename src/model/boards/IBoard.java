@@ -1,7 +1,6 @@
 package model.boards;
 import model.BivariateHashMap;
 import model.Position;
-import model.games.TicTacToeGame;
 
 public interface IBoard {
     BivariateHashMap<Integer, Integer, IShapes> getBoard();

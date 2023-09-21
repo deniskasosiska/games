@@ -2,9 +2,8 @@ package model.boards;
 
 import model.BivariateHashMap;
 import model.Position;
-import model.games.TicTacToeGame;
 
-abstract class Board implements IBoard {
+public abstract class Board implements IBoard {
     protected BivariateHashMap<Integer, Integer, IShapes> board;
     protected final int width;
     protected final int length;

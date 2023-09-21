@@ -1,12 +1,12 @@
-package model.games;
+package controller.games;
 
 import model.boards.IBoard;
 import model.players.IPlayer;
-import model.view.IView;
+import view.IView;
 
 import java.util.List;
 
-abstract class Game implements IGame{
+public abstract class Game implements IGame{
     protected String nameGame;
     protected IBoard board;
     protected List<IPlayer> players;

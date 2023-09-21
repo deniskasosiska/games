@@ -1,12 +1,14 @@
-package model.boards;
+package model.TicTacToe;
 
 import model.BivariateHashMap;
 import model.Position;
+import model.boards.Board;
+import model.boards.IShapes;
 
-public class TicTacToeBoard extends Board{
+public class TicTacToeBoard extends Board {
 
-    public TicTacToeBoard() {
-        super(3, 3);
+    public TicTacToeBoard(int size) {
+        super(size, size);
     }
 
 

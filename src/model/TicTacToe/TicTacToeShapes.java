@@ -1,6 +1,8 @@
-package model.boards;
+package model.TicTacToe;
 
-public enum TicTacToeShapes implements IShapes{
+import model.boards.IShapes;
+
+public enum TicTacToeShapes implements IShapes {
     o('0'),
     x('X'),
     empty(' ');

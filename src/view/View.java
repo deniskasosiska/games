@@ -61,7 +61,7 @@ public class View implements IView {
     public void getEndMessage(IPlayer winner, IBoard board) {
         visual(board);
         System.out.println("Победил(а) - "+winner.getName()+"!\n" +
-                "У Марины - "+winner.getScore()+" очков!");
+                "У "+ winner.getName() +" - "+winner.getScore()+" очков!");
     }
 
     @Override

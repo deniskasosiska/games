@@ -7,10 +7,10 @@ import view.IView;
 import java.util.List;
 
 public abstract class Game implements IGame{
-    protected String nameGame;
-    protected IBoard board;
-    protected List<IPlayer> players;
-    protected IView view;
+    protected final String nameGame;
+    protected final IBoard board;
+    protected final List<IPlayer> players;
+    protected final IView view;
 
     public Game(String nameGame, IBoard board, List<IPlayer> players, IView view) {
         this.nameGame = nameGame;

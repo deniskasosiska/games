@@ -1,22 +1,26 @@
-package controller;
+package controller.games;
 
 import model.BivariateHashMap;
 import model.Position;
 import model.TicTacToe.TicTacToeBoard;
 import model.TicTacToe.TicTacToeShapes;
+import model.boards.IBoard;
 import model.boards.IShapes;
 import controller.games.Game;
+import model.players.DefaultPlayers;
 import model.players.IPlayer;
 import view.IView;
+import view.View;
+
 import java.util.List;
 
 public class TicTacToeGame extends Game
 {
     private final int sizeLineToWin;
-    public TicTacToeGame(List<IPlayer> players, IView view, int size, int sizeLineToWin)
-    {
-        super("Крестики нолики", new TicTacToeBoard(size), players, view);
-        this.sizeLineToWin = sizeLineToWin;
+
+    private TicTacToeGame(Builder builder) {
+        super(builder.nameGame, builder.board, builder.players, builder.view);
+        this.sizeLineToWin = builder.sizeLineToWin;
     }
 
     @Override
@@ -74,5 +78,34 @@ public class TicTacToeGame extends Game
         return false;
     }
 
-
+    public static class Builder{
+        public String nameGame = "";
+        public IBoard board = new TicTacToeBoard(3);
+        public List<IPlayer> players = DefaultPlayers.getTwoPlayers();
+        public IView view = new View();
+        public int sizeLineToWin = 3;
+        public Builder setName(String var){
+            nameGame = var;
+            return this;
+        }
+        public Builder setBoard(IBoard var){
+            board = board;
+            return this;
+        }
+        public Builder setPlayers(List<IPlayer> var){
+            players = players;
+            return this;
+        }
+        public Builder setView(IView var){
+            view = view;
+            return this;
+        }
+        public Builder setSizeLineToWin(int var){
+            sizeLineToWin = sizeLineToWin;
+            return this;
+        }
+        public TicTacToeGame build(){
+            return new TicTacToeGame(this);
+        }
+    }
 }
